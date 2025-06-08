@@ -163,219 +163,55 @@
             100% { background-position: 200% 50%; }
         }
 
-        #h2 {
-            color: #00A2E8;
-            font-size: 3.5em;
-            margin: 40px 0;
-            text-align: center;
-            padding-top: 40px;
-            font-weight: 700;
-            text-shadow: 0 0 20px rgba(0, 162, 232, 0.5);
-            position: relative;
-        }
-
-        #h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #00A2E8, #A50044);
-            border-radius: 2px;
-        }
-
-        main > div#imagem {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin: 120px 0 200px 0;
-            position: relative;
-        }
-
-        main > div#imagem img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 6px solid #00A2E8;
-            box-shadow: 
-                0 0 40px rgba(0, 162, 232, 0.6),
-                0 0 80px rgba(0, 162, 232, 0.3);
-            transition: all 0.3s ease;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        main > div#imagem img:hover {
-            transform: scale(1.1);
-            box-shadow: 
-                0 0 60px rgba(0, 162, 232, 0.8),
-                0 0 120px rgba(0, 162, 232, 0.4);
-        }
 
         @keyframes pulse {
             0%, 100% { box-shadow: 0 0 40px rgba(0, 162, 232, 0.6), 0 0 80px rgba(0, 162, 232, 0.3); }
             50% { box-shadow: 0 0 60px rgba(0, 162, 232, 0.8), 0 0 120px rgba(0, 162, 232, 0.5); }
-        }
+        } 
+        .sobre-bloco {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.04);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,162,232,0.10);
+    margin: 60px auto 60px auto;
+    max-width: 1000px;
+    padding: 40px 30px;
+    gap: 40px;
+}
 
-        .ana {
-            display: flex;
-            align-items: stretch;
-            width: 100%;
-            max-width: 1000px;
-            height: 300px;
-            margin: 80px auto 300px; /* Adjusted margin for .ana, increased bottom margin */
-            background: rgba(255, 255, 255, 0.05);
-            box-sizing: border-box;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
+.sobre-img {
+    width: 340px;
+    min-width: 220px;
+    max-width: 380px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,162,232,0.18);
+    border: 3px solid #00A2E8;
+    background: #fff;
+}
 
-        .ana:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-        }
+.sobre-texto {
+    color: #f0f0f0;
+    font-size: 1.25em;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+    max-width: 600px;
+}
 
-        .ana::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .ana:hover::before {
-            left: 100%;
-        }
-
-        .ana-img {
-            width: 40%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .ana-text {
-            width: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ana-text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: inherit;
-            opacity: 0.9;
-        }
-
-        .ana.azul .ana-text {
-            background: linear-gradient(135deg, #00A2E8 0%, rgba(0, 162, 232, 0.8) 100%);
-        }
-
-        .ana.vermelho .ana-text {
-            background: linear-gradient(135deg, #A50044 0%, rgba(165, 0, 68, 0.8) 100%);
-        }
-
-        .ana-text p {
-            color: #fff;
-            font-size: 1.8em;
-            margin: 0;
-            text-align: left;
-            font-family: 'Poppins', sans-serif;
-            background: none;
-            box-shadow: none;
-            padding: 0 30px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            font-weight: 500;
-            line-height: 1.4;
-            position: relative;
-            z-index: 2;
-        }
-
-        .ana.vermelho .ana-text p {
-            border: none; /* Removed border specifically for p in .ana.vermelho */
-        }
-
-
-        /* Styles for generic 'div p' - might be unintentionally broad */
-        /* This rule gives p tags inside .ana-text a blue border by default */
-        div p { 
-            font-size: 1.8em;
-            margin: 0 auto;
-            color: white;
-            display: block;
-            padding: 25px 40px;
-            text-shadow: 0 0 15px rgba(0, 162, 232, 0.8);
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            border: 2px solid #00A2E8;
-            font-weight: 500;
-            -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-            transition: all 0.3s ease;
-            text-align: center;
-            width: fit-content;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 162, 232, 0.3);
-        }
-
-        div p:hover {
-            transform: scale(1.05);
-            background: rgba(0, 162, 232, 0.2);
-            border-color: #A50044;
-            box-shadow: 0 15px 40px rgba(0, 162, 232, 0.5);
-        }
-
-        /* NEW STYLES FOR COMMENTARY PARAGRAPHS */
-        .commentary-text {
-            color: #f0f0f0; /* Light text color */
-            font-size: 2em;   /* Increased font size */
-            text-align: center; /* Centered text */
-            background-color: rgba(45, 45, 45, 0.75); /* Darker, distinct background */
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            padding: 30px 45px; /* Ample padding */
-            border-radius: 18px; /* Rounded corners */
-            margin: 70px auto 300px;  /* Vertical spacing and horizontal centering, increased bottom margin */
-            max-width: 750px;   /* Max width to maintain readability */
-            font-weight: 500;   /* Medium font weight */
-            line-height: 1.6;
-            border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle light border */
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
-            position: relative;
-        }
-
-
-        .ana-img-final {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin: 100px 0 80px 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .ana-img-final:hover {
-            transform: scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-        }
+.comentario-texto {
+    color: #f0f0f0;
+     background: rgba(255,255,255,0.04);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,162,232,0.10);
+    margin: 60px auto 60px auto;
+    max-width: 1000px;
+    padding: 40px 30px;
+    gap: 40px;
+}
 
         footer {
             background: linear-gradient(135deg, #000000 0%, #00A2E8 100%);
@@ -472,15 +308,6 @@
             header h1 {
                 font-size: 36px;
             }
-            #h2 {
-                font-size: 2.8em;
-            }
-            .commentary-text {
-                font-size: 1.7em;
-                padding: 25px 35px;
-                max-width: 90%;
-                /* margin-bottom will inherit from the base .commentary-text rule (300px) or be overridden. */
-            }
         }
 
         /* Responsividade para telas menores */
@@ -502,69 +329,51 @@
             nav {
                 padding-left: 10px;
             }
-            
-            nav a {
-                padding: 10px 15px;
-                font-size: 14px;
-                margin-right: 10px;
+
+            /* Mantém imagem à esquerda e texto à direita em telas pequenas */
+            .sobre-bloco {
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 16px;
+                padding: 12px 4px;
+                max-width: 100vw;
+            }
+            .sobre-img {
+                width: 45vw;
+                min-width: 160px;
+                max-width: 48vw;
+                height: 110px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .sobre-texto {
+                font-size: 0.95em;
+                max-width: 52vw;
+                text-align: justify;
             }
             
             main {
                 width: 95vw;
                 margin: 20px 0;
             }
-            
-            #h2 {
-                font-size: 2em;
-                margin: 20px 0;
-                padding-top: 20px;
-            }
-            
-            main > div#imagem {
-                margin: 80px 0 150px 0;
-            }
-            
-            .ana {
-                flex-direction: column; /* Changed from row to column for small screens */
-                width: 90%;
-                height: auto; /* Auto height for column layout */
-                margin: 50px auto 200px; /* Adjusted bottom margin for smaller screens */
-            }
-            
-            .ana-img {
-                width: 100%; /* Full width for stacked image */
-                height: 200px; /* Fixed height for image */
-            }
-            
-            .ana-text {
-                width: 100%; /* Full width for text */
-                padding: 20px; /* Adjusted padding */
-                text-align: center; /* Center text in column layout */
-            }
-            
-            .ana-text p {
-                font-size: 1.2em; /* Adjusted font size */
-                padding: 0 10px;
-                line-height: 1.3;
-                text-align: center; /* Ensure text within p is centered */
-            }
-            
-            .commentary-text {
-                font-size: 1.3em;
-                padding: 20px 25px;
-                margin: 40px auto 200px; /* Adjusted bottom margin for smaller screens */
-                max-width: 90%;
-            }
-            
-            main > div#imagem img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .ana-img-final {
-                height: 200px;
-                margin: 60px 0 40px 0;
-            }
+    
+          @media (max-width: 900px) {
+    .sobre-bloco {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 10px;
+        gap: 25px;
+    }
+    .sobre-img {
+        width: 95vw;
+        max-width: 98vw;
+        height: 180px;
+    }
+    .sobre-texto {
+        font-size: 1em;
+        max-width: 98vw;
+    }
+}  
             
             footer {
                 padding: 40px 15px 15px;
@@ -610,30 +419,50 @@
         </nav>
     </header>
     <main>
+<!-- Bloco de apresentação com imagem e texto lado a lado -->
 
-        <div class="ana vermelho">
-            <img class="ana-img" src="imagens/ana-2.png" alt="Foto de Ana">
-            <div class="ana-text">
-                <p>Mas eu gosto de chama-la <br> Ana Banana</p>
-            </div>
-        </div>
-        <p class="commentary-text">Sem ela saber claro</p>
-        
-        <div class="ana azul">
-            <div class="ana-text">
-                <p>Ela é uma pessoa muito simpática, está sempre dando conselho as pessoas</p>
-            </div>
-            <img class="ana-img" src="imagens/ana-2.png" alt="Foto de Ana">
-        </div>        
-        
-        <div class="ana vermelho">
-            <img class="ana-img" src="imagens/ana-3.1.jpg" alt="Foto de Ana">
-            <div class="ana-text">
-                <p>Ela conhece muitas pessoas</p>
-            </div>
-        </div>
-        <p class="commentary-text">Não é Photoshop é Photoshop</p>
 
+<div class="sobre-bloco">
+    <img src="./imagens/dani.jpg" alt="Árvore em um parque" class="sobre-img">
+    <div class="sobre-texto">
+         <br>
+        <p class="paragrafo-1"> <strong>Daniel (nome do meio) Cambambe</strong>.</p>
+        <p class="paragrafo-1">Me descrevo como uma pessoa que existe. Gosto de pensar que sou uma pessoa simples que gosta de coisas não muito simples. </p>
+
+
+    </div>
+</div>
+   <div class="comentario-texto">
+            <p><strong>FALA UM POUCO SOBRE TI</strong></p>
+            <br>
+            <p>Meu nome é Daniel Cambambe, tenho 2x-36=0 anos e sou de Angola. </p>
+            <p>Nasci no dia 20 de Agosto de 2000 e tal, em Luanda, Angola. Desde pequeno, sempre tive uma curiosidade sobre o mundo ao meu redor. </p>
+            <p>Gosto de coisas simples como olhar para as estrelas, ouvir música e aprender coisas novas. </p>
+       <p>Nesse mundo existe muita coisa que me deixa feliz (como olhar para as estrelas) e muitas coisas que me deixam desfeliz (Essa palavra existe 🤧) </p>
+            <p>Sou uma pessoa muito ambiciosa, nunca desisto dos meus objectivos (há não ser que se tornem impossíveis ou me aborreça deles)</p>
+            <p>Eu penso mais do que falo oque muitas vezes dificulta na minha comunicação com outras pessoas</p>
+            <p>Gosto de aprender coisas novas, principalmente sobre tecnologia, astronomia e matemática. </p>
+            <br>
+            <p><strong>O QUE TE LEVOU A ENTRAR NO MUNDO DE DESENVOLVIMENTO DE WEBSITES?</strong> </p> <br>
+            <p><strong>R:</strong> Acredito que foram vários factores como a curiosidade, um meio para alcançar os meus objectivos e principalmente por que estava aborrecido durante as férias</p>
+            <br>
+            <P><strong>FALA SOBRE OS TRABALHOS QUE DESENVOLVESTE ATÉ AGORA. RANKEANDO DESDE O PIOR, O MELHOR E O FAVORITO</strong></P> <br>
+
+            <p><strong>R:</strong> Bom, eu não tenho muitos trabalhos desenvolvidos, mas posso falar dos que fiz até agora.</p><br>
+
+
+
+            <p>1. <strong>PLAYNET</strong><img src="" alt=""> Foi o meu primeiro projeto, onde aprendi os conceitos básicos de desenvolvimento. Apesar de ser simples, foi um grande passo para mim. Criei com o intuito de ser o um site para ver filmes e séries mas infelizmente ele foi "Deixado de lado"</p>
+           
+
+           
+            <p>2. <strong>MUSIK</strong>: Um site que desenvolvi para compartilhar minhas músicas favoritas. Foi um projeto divertido e me permitiu explorar mais sobre design e usabilidade. Musik é sem dúvida o meu favorito</p>
+
+            <p>3. <strong>ana-banana</strong>: A minha obra-prima. Esse projecto me levou até ao limite, desde encontrar a inspiração e motivação, escolher uma paleta de cores que conjugassem (O que não seria possível sem uma "ajudinha"). A parte mais difícil foi aprender novos conceitos: novas tags,regras e variáveis que estavam muito além do meu nível,<br>O uso do Photoshop (mesmo sendo básico) foi um desafio enorme, me  forcei a fazer dezenas de pesquisas, ver centenas de vídeos e passar milhares de horas tentando fazer tudo funcionar. Foi uma altêntica dor de cabeça</p>
+            <br>
+            <p>Isso é tudo que tinha a dizer, por favor deixa o teu comentário sobre o que é que achaste do site</p>
+            <p><strong>OBS: COMENTÁRIOS SÉRIOS SOBRE OS ERROS QUE COMETI, O QUE EU PODIA OU NÃO TER FEITO E ETC É NO GRUPO.</strong></p>
+   </div>
     </main>
 
     <footer>
@@ -661,3 +490,9 @@
     </footer>
 </body>
 </html>
+
+/* ...existing code... */
+
+
+
+/* ...existing code... */
