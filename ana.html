@@ -224,7 +224,7 @@
             width: 100%;
             max-width: 1000px;
             height: 300px;
-            margin: 80px auto 300px; /* Adjusted margin for .ana, increased bottom margin */
+            margin: 80px auto 500px; /* Adjusted margin for .ana, increased bottom margin */
             background: rgba(255, 255, 255, 0.05);
             box-sizing: border-box;
             border-radius: 20px;
@@ -296,7 +296,7 @@
             color: #fff;
             font-size: 1.8em;
             margin: 0;
-            text-align: left;
+            text-align: center;
             font-family: 'Poppins', sans-serif;
             background: none;
             box-shadow: none;
@@ -333,6 +333,7 @@
             width: fit-content;
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 162, 232, 0.3);
+        
         }
 
         div p:hover {
@@ -359,6 +360,7 @@
             border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle light border */
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
             position: relative;
+            
         }
 
 
@@ -528,7 +530,7 @@
                 flex-direction: column; /* Changed from row to column for small screens */
                 width: 90%;
                 height: auto; /* Auto height for column layout */
-                margin: 50px auto 200px; /* Adjusted bottom margin for smaller screens */
+                margin: 400px auto 400px; /* Adjusted bottom margin for smaller screens */
             }
             
             .ana-img {
@@ -540,6 +542,7 @@
                 width: 100%; /* Full width for text */
                 padding: 20px; /* Adjusted padding */
                 text-align: center; /* Center text in column layout */
+                align-items: center;
             }
             
             .ana-text p {
@@ -547,6 +550,7 @@
                 padding: 0 10px;
                 line-height: 1.3;
                 text-align: center; /* Ensure text within p is centered */
+                 align-items: center;
             }
             
             .commentary-text {
@@ -618,13 +622,12 @@
         <div style="height:300px;"></div>
 
         <div class="ana vermelho">
-            <img class="ana-img" src="imagens/ana-9.jpg" alt="Foto de Ana" style="width: 100%; height: 300px;">
+            <img class="ana-img" src="imagens/ana-9.jpg" alt="Foto de Ana" style="width: 100%; height: 500px;">
             <div class="ana-text">
                 <p>Mas eu gosto de chama-la <br> Ana Banana</p>
             </div>
         </div>
-        <p class="commentary-text">Ela não sabe disso</p>
-        <p class="commentary-text">Agora ela sabe</p>
+        <p class="commentary-text">Porque ela é amarela como uma Banana</p>
         
         <div class="ana azul">
             <div class="ana-text">
@@ -642,18 +645,18 @@
                 <p>Ela conhece muitas pessoas</p>
             </div>
         </div>
-        <p class="commentary-text">A imagem é real</p>
+        <p class="commentary-text">...</p>
 
         <div class="ana azul">
             <div class="ana-text">
                 <p>Incluindo a mim</p>
             </div>
-            <img class="ana-img" src="imagens/ana e eu-2.jpg" alt="Foto de Ana" style="width: 100%; height: 300px;">
+            <img class="ana-img" src="imagens/ana e eu-2.jpg" alt="Foto de Ana" style="height: 300px;object-fit: cover; object-position: center;">
         </div> 
         <p class="commentary-text">Os invejosos vão dizer que é Photoshop 🤧</p>
 
         <div class="ana vermelho">
-            <img class="ana-img" src="imagens/ana-2-1.jpg" alt="Foto de Ana" style="width: 100%; height: 400px">
+            <img class="ana-img" src="imagens/ana-2-1.jpg" alt="Foto de Ana" style="width: 100%; height:px; object-fit: cover; object-position: top;">
             <div class="ana-text">
                 <p>Ela tem uma melhor amiga</p>
             </div>  
@@ -680,10 +683,10 @@
         <div class="ana vermelho">
             <img class="ana-img" src="imagens/ana-14.jpg" alt="Foto de Ana">
             <div class="ana-text">
-                <p>A cor favorita dela é &uparrow;</p>  ;
+                <p>A cor favorita dela é &uparrow;</p>
             </div>
         </div>
-        <p class="commentary-text">Que tipo de pessoa escolhe preto como cor favorita???</p>
+        <p class="commentary-text">Não consigo entender que tipo de pessoa escolhe preto como cor favorita!</p>
 
         <div class="ana azul">
             <div class="ana-text">
@@ -694,12 +697,27 @@
         <p class="commentary-text">Sem comentários 😕</p>
         
         <div class="ana vermelho">
-            <img class="ana-img" src="imagens/ana-2.png" alt="Foto de Ana">
+            <img class="ana-img" src="imagens/ana-10-1.jpg" alt="Foto de Ana" style="width: 100%; height: 300px; object-fit: cover; object-position: center;">
+            <div class="ana-text">
+                <p>Ela é adepta do Real Madrid e gosta de humilhar o Barcelona</p>
+            </div>
+        </div>
+        <p class="commentary-text">Mentira 😂</p>
+
+        <div class="ana azul">
+            <div class="ana-text">
+                <p>Ela é do Inter 😐</p>
+            </div>
+            <img class="ana-img" src="imagens/ana-11.jpg" alt="Foto de Ana" style="width: 100%; height: 300px; object-fit: cover; object-position: bottom;">
+        </div>
+        <p class="commentary-text">😂😂😂</p>
+
+        <div class="ana vermelho">
             <div class="ana-text">
                 <p>Ela é uma pessoa muito legal</p>
             </div>
         </div>
-        <p class="commentary-text">Ela é tão legal que ********</p>
+        <p class="commentary-text">Ela é tão legal que... </p>
         
         <div class="ana azul">
             <div class="ana-text">
@@ -710,9 +728,10 @@
         <p class="commentary-text">SERÁ? 🤔</p>
         
         <img src="./imagens/ana-0.jpg" alt="Classroom presentation slide with cheerful cartoon faces, a flower, and a lightning bolt. The slide displays the text Como dizia minha ex, terminamos with three exclamation marks. The atmosphere is humorous and lighthearted." class="ana-img-final">
-        
+
         <p class="commentary-text">Mentira, eu não tenho ex 🤧</p>
-        <p class="commentary-text">Espero que nada escrito aqui tenha te magoado</p>
+        
+        <p class="commentary-text">Espero que nada descrito aqui tenha te magoado</p>
     </main>
     <footer>
         <div class="footer-container">
