@@ -318,16 +318,47 @@
             }
             
             header {
-                height: 100px;
+                height: 150px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             
             header h1 {
                 font-size: 28px;
                 padding-top: 15px;
+                text-align: center;
+                margin-bottom: 10px;
             }
             
             nav {
-                padding-left: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+                margin-top: 0;
+                padding-left: 0;
+            }
+
+            nav a {
+                padding: 12px 28px;
+                font-size: 14px;
+                margin-right: 0;
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.13);
+                border: none;
+                font-weight: 500;
+                box-shadow: none;
+                display: inline-block;
+            }
+            
+            nav a:hover {
+                background: rgba(165, 0, 68, 0.8);
+                border: 2px solid #A50044;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(165, 0, 68, 0.4);
             }
 
             /* Mantém imagem à esquerda e texto à direita em telas pequenas */
@@ -414,7 +445,7 @@
     <header>
         <h1>PROJETO ANA</h1>
         <nav>
-            <a href="#">Home</a>
+            <a href="ana.html">Home</a>
             <a href="#">Outros</a>
         </nav>
     </header>
@@ -452,17 +483,56 @@
 
 
 
-            <p>1. <strong>PLAYNET</strong><img src="" alt=""> Foi o meu primeiro projeto, onde aprendi os conceitos básicos de desenvolvimento. Apesar de ser simples, foi um grande passo para mim. Criei com o intuito de ser o um site para ver filmes e séries mas infelizmente ele foi "Deixado de lado"</p>
+            <p>1. <strong>PLAYNET</strong><br><img src="./imagens/playnet.png" alt="playnet" style="width: 100%; ; height:300px ;"> <br>Foi o meu primeiro projeto, onde aprendi os conceitos básicos de desenvolvimento. Apesar de ser simples, foi um grande passo para mim. Criei com o intuito de ser o um site para ver filmes e séries mas infelizmente ele foi "Deixado de lado"</p> <br>
            
 
            
-            <p>2. <strong>MUSIK</strong>: Um site que desenvolvi para compartilhar minhas músicas favoritas. Foi um projeto divertido e me permitiu explorar mais sobre design e usabilidade. Musik é sem dúvida o meu favorito</p>
+            <p>2. <strong>MUSIK</strong><br> <img src="./imagens/musik.png" alt="musik" style="width: 100%; height:200px ;"> <br>
+                 Um site que desenvolvi para compartilhar minhas músicas favoritas. Foi um projeto divertido e me permitiu explorar mais sobre design e usabilidade. Musik é sem dúvida o meu favorito</p><br>
 
-            <p>3. <strong>ana-banana</strong>: A minha obra-prima. Esse projecto me levou até ao limite, desde encontrar a inspiração e motivação, escolher uma paleta de cores que conjugassem (O que não seria possível sem uma "ajudinha"). A parte mais difícil foi aprender novos conceitos: novas tags,regras e variáveis que estavam muito além do meu nível,<br>O uso do Photoshop (mesmo sendo básico) foi um desafio enorme, me  forcei a fazer dezenas de pesquisas, ver centenas de vídeos e passar milhares de horas tentando fazer tudo funcionar. Foi uma altêntica dor de cabeça</p>
+            <p>3. <strong>ana-banana</strong><br> <img src="imagens/ana-banana.png" alt="ana-banana" style="width: 100%; height:200px ;"> <br>
+                Este é o site que estás a ver agora. A minha "<strong>obra-prima</strong>". Foi um desafio maior, onde aprendi muito sobre HTML, CSS e um pouco de JavaScript. É o meu projeto mais recente</p>
+                 Esse projecto me levou até ao limite, desde encontrar a inspiração e motivação, escolher uma paleta de cores que conjugassem (O que não seria possível sem uma "ajudinha"). A parte mais difícil foi aprender novos conceitos: novas tags,regras e variáveis que estavam muito além do meu nível,<br>O uso do Photoshop (mesmo sendo básico) foi um desafio enorme, me  forcei a fazer dezenas de pesquisas, ver centenas de vídeos e passar milhares de horas tentando fazer tudo funcionar. Foi uma altêntica dor de cabeça</p>
             <br>
             <p>Isso é tudo que tinha a dizer, por favor deixa o teu comentário sobre o que é que achaste do site</p>
-            <p><strong>OBS: COMENTÁRIOS SÉRIOS SOBRE OS ERROS QUE COMETI, O QUE EU PODIA OU NÃO TER FEITO E ETC É NO GRUPO.</strong></p>
+           <br> <p><strong>OBS: COMENTÁRIOS SÉRIOS SOBRE OS ERROS QUE COMETI, O QUE EU PODIA OU NÃO TER FEITO E ETC É NO GRUPO.</strong></p>
    </div>
+   
+   <!-- Seção de Comentários -->
+   <section id="comentarios" style="margin:40px auto 0;max-width:700px;">
+       <h2 style="color:#fff;display:flex;align-items:center;font-size:1.5em;margin-bottom:18px;">
+           <span style="font-size:1.3em;margin-right:8px;">💬</span>Comentários:
+       </h2>
+       <form id="comentario-form" style="display:flex;flex-direction:column;gap:12px;background:rgba(0,0,0,0.7);padding:18px 18px 12px 18px;border-radius:12px;">
+           <div style="display:flex;align-items:center;gap:12px;">
+               <label for="foto" style="cursor:pointer;">
+                   <img id="foto-preview" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:#222;">
+                   <input type="file" id="foto" accept="image/*" style="display:none;">
+               </label>
+               <input type="text" id="nome" placeholder="Nome" maxlength="30" style="flex:1;padding:8px 10px;border-radius:8px;border:none;font-size:1em;">
+               <input type="text" id="pais" placeholder="País" maxlength="30" style="width:90px;padding:8px 10px;border-radius:8px;border:none;font-size:1em;">
+           </div>
+           <textarea id="comentario" placeholder="Deixe um comentário..." maxlength="300" required style="resize:none;padding:10px 12px;border-radius:8px;border:none;font-size:1em;height:48px;"></textarea>
+           <button type="submit" style="align-self:flex-end;background:#00A2E8;color:#fff;padding:8px 22px;border:none;border-radius:8px;font-size:1em;font-weight:500;cursor:pointer;transition:.2s;">Publicar</button>
+       </form>
+       <div id="comentarios-lista" style="margin-top:28px;">
+           <div id="comentarios-contador" style="color:#fff;font-size:1.1em;margin-bottom:10px;">0 Comentários</div>
+           <!-- Comentários inseridos aqui -->
+           <div class="comentario-item" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:22px;background:rgba(30,30,30,0.95);padding:14px 18px;border-radius:12px;">
+               <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:#222;flex-shrink:0;">
+               <div>
+                   <div style="font-weight:600;color:#00A2E8;font-size:1.05em;margin-bottom:2px;">
+                       João - Brasil
+                   </div>
+                   <div style="color:#fff;font-size:1.08em;line-height:1.5;margin-bottom:6px;">Eu não sabia</div>
+                   <div style="display:flex;gap:18px;">
+                       <span style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">♡ Curtir</span>
+                       <span style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">↩️ Responder</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
     </main>
 
     <footer>
@@ -488,11 +558,177 @@
             <p>COPYRIGHT © 2025 SOBRE MIM. TODOS DIREITOS RESERVADOS.</p>
         </div>
     </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('comentario-form');
+    const lista = document.getElementById('comentarios-lista');
+    const contador = document.getElementById('comentarios-contador');
+    const fotoInput = document.getElementById('foto');
+    const fotoPreview = document.getElementById('foto-preview');
+    const nomeInput = document.getElementById('nome');
+    const paisInput = document.getElementById('pais');
+    const comentarioInput = document.getElementById('comentario');
+    let comentarios = [];
+    let responderA = null; // Array de índices para localizar o comentário/resposta a ser respondido
+
+    // Carregar comentários do localStorage ao iniciar
+    if (localStorage.getItem('comentarios')) {
+        try {
+            comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+        } catch (e) {
+            comentarios = [];
+        }
+    }
+
+    fotoInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                fotoPreview.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            fotoPreview.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+        }
+    });
+
+    // Função recursiva para renderizar respostas aninhadas
+    function renderRespostas(respostas, parentPath = []) {
+        if (!respostas || !respostas.length) return '';
+        return respostas.map((resp, idx) => `
+        <div class="comentario-resposta" style="margin-left:${48 + parentPath.length*24}px;margin-top:10px;display:flex;align-items:flex-start;gap:10px;background:rgba(40,40,40,0.92);padding:10px 14px;border-radius:10px;flex-direction:column;">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+                <img src="${resp.foto && resp.foto !== 'https://cdn-icons-png.flaticon.com/512/149/149071.png' ? resp.foto : 'https://cdn-icons-png.flaticon.com/512/149/149071.png'}" alt="avatar" style="width:36px;height:36px;border-radius:50%;object-fit:cover;background:#222;flex-shrink:0;">
+                <div>
+                    <div style="font-weight:600;color:#A50044;font-size:0.98em;margin-bottom:2px;">
+                        ${resp.nome ? resp.nome : "Anônimo"}${resp.pais ? " - " + resp.pais : ""}
+                    </div>
+                    <div style="color:#fff;font-size:1em;line-height:1.4;margin-bottom:4px;">${resp.texto}</div>
+                    <div style="display:flex;gap:18px;">
+                        <span class="curtir-btn" data-path="${[...parentPath, idx].join(',')}" style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">
+                            ♡ Curtir <span class="curtidas-count">${resp.curtidas || 0}</span>
+                        </span>
+                        <span class="responder-btn" data-path="${[...parentPath, idx].join(',')}" style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">↩️ Responder</span>
+                    </div>
+                </div>
+            </div>
+            <div class="respostas-lista">
+                ${renderRespostas(resp.respostas, [...parentPath, idx])}
+            </div>
+        </div>
+    `).join('');
+    }
+
+    function renderComentarios() {
+        // Limpa comentários antigos
+        lista.querySelectorAll('.comentario-item').forEach(el => el.remove());
+        // Atualiza contador
+        contador.textContent = comentarios.length + (comentarios.length === 1 ? " Comentário" : " Comentários");
+        // Adiciona cada comentário
+        comentarios.forEach((com, idx) => {
+            const div = document.createElement('div');
+            div.className = 'comentario-item';
+            div.style = "display:flex;align-items:flex-start;gap:12px;margin-bottom:22px;background:rgba(30,30,30,0.95);padding:14px 18px;border-radius:12px;flex-direction:column;";
+            div.innerHTML = `
+                <div style="display:flex;align-items:flex-start;gap:12px;width:100%;">
+                    <img src="${com.foto || "https://cdn-icons-png.flaticon.com/512/149/149071.png"}" alt="avatar" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:#222;flex-shrink:0;">
+                    <div style="flex:1;">
+                        <div style="font-weight:600;color:#00A2E8;font-size:1.05em;margin-bottom:2px;">
+                            ${com.nome ? com.nome : "Anônimo"}${com.pais ? " - " + com.pais : ""}
+                        </div>
+                        <div style="color:#fff;font-size:1.08em;line-height:1.5;margin-bottom:6px;">${com.texto}</div>
+                        <div style="display:flex;gap:18px;">
+                            <span class="curtir-btn" data-path="${idx}" style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">
+                            ♡ Curtir <span class="curtidas-count">${com.curtidas || 0}</span>
+                        </span>
+                            <span class="responder-btn" data-path="${idx}" style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">↩️ Responder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="respostas-lista">
+                    ${renderRespostas(com.respostas, [idx])}
+                </div>
+            `;
+            lista.appendChild(div);
+        });
+
+        // Adiciona eventos aos botões de responder (comentários e respostas)
+        lista.querySelectorAll('.responder-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                responderA = btn.getAttribute('data-path').split(',').map(Number);
+                // Busca o nome do comentário/resposta a ser respondido
+                let alvo = comentarios;
+                for (let i = 0; i < responderA.length; i++) {
+                    alvo = alvo[responderA[i]];
+                    if (i < responderA.length - 1) alvo = alvo.respostas;
+                }
+                const nome = alvo.nome || "Anônimo";
+                comentarioInput.value = `@${nome} `;
+                comentarioInput.focus();
+                window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+
+        // Eventos de curtir
+        lista.querySelectorAll('.curtir-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const path = btn.getAttribute('data-path').split(',').map(Number);
+                curtirComentario(comentarios, path);
+                localStorage.setItem('comentarios', JSON.stringify(comentarios));
+                renderComentarios();
+            });
+        });
+    }
+
+    // Função para inserir resposta em qualquer nível de aninhamento
+    function inserirResposta(comentariosArr, path, resposta) {
+        if (path.length === 1) {
+            if (!comentariosArr[path[0]].respostas) comentariosArr[path[0]].respostas = [];
+            comentariosArr[path[0]].respostas.push(resposta);
+        } else {
+            inserirResposta(comentariosArr[path[0]].respostas, path.slice(1), resposta);
+        }
+    }
+
+    // Função para curtir comentário/resposta em qualquer nível
+    function curtirComentario(arr, path) {
+        if (path.length === 1) {
+            arr[path[0]].curtidas = (arr[path[0]].curtidas || 0) + 1;
+        } else {
+            curtirComentario(arr[path[0]].respostas, path.slice(1));
+        }
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nome = nomeInput.value.trim();
+        const pais = paisInput.value.trim();
+        const texto = comentarioInput.value.trim();
+        let foto = fotoPreview.src;
+        if (!texto) return;
+        // Limita tamanho da imagem
+        if (foto.length > 300000) foto = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
+        if (responderA !== null && responderA.length > 0) {
+            // Adiciona como resposta aninhada
+            inserirResposta(comentarios, responderA, { nome, pais, texto, foto, respostas: [] });
+            responderA = null;
+        } else {
+            // Novo comentário principal
+            comentarios.unshift({ nome, pais, texto, foto, respostas: [] });
+        }
+        // Salva no localStorage
+        localStorage.setItem('comentarios', JSON.stringify(comentarios));
+        renderComentarios();
+        // Limpa campos
+        form.reset();
+        fotoPreview.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+        comentarioInput.value = '';
+    });
+
+    renderComentarios();
+});
+</script>
 </body>
 </html>
-
-/* ...existing code... */
-
-
-
-/* ...existing code... */
