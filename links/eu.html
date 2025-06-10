@@ -494,11 +494,12 @@
                 Este é o site que estás a ver agora. A minha "<strong>obra-prima</strong>". Foi um desafio maior, onde aprendi muito sobre HTML, CSS e um pouco de JavaScript. É o meu projeto mais recente</p>
                  Esse projecto me levou até ao limite, desde encontrar a inspiração e motivação, escolher uma paleta de cores que conjugassem (O que não seria possível sem uma "ajudinha"). A parte mais difícil foi aprender novos conceitos: novas tags,regras e variáveis que estavam muito além do meu nível,<br>O uso do Photoshop (mesmo sendo básico) foi um desafio enorme, me  forcei a fazer dezenas de pesquisas, ver centenas de vídeos e passar milhares de horas tentando fazer tudo funcionar. Foi uma altêntica dor de cabeça</p>
             <br>
-            <p>Isso é tudo que tinha a dizer, por favor deixa o teu comentário sobre o que é que achaste do site</p>
-           <br> <p><strong>OBS: COMENTÁRIOS SÉRIOS SOBRE OS ERROS QUE COMETI, O QUE EU PODIA OU NÃO TER FEITO E ETC É NO GRUPO.</strong></p>
-   </div>
+            <p>Isso é tudo que tinha a dizer, por favor deixa o teu comentário no grupo sobre o que é que achaste do site</p>
+            
+
    
-   <!-- Seção de Comentários -->
+   <!-- Remover toda a seção de comentários abaixo -->
+   <!--
    <section id="comentarios" style="margin:40px auto 0;max-width:700px;">
        <h2 style="color:#fff;display:flex;align-items:center;font-size:1.5em;margin-bottom:18px;">
            <span style="font-size:1.3em;margin-right:8px;">💬</span>Comentários:
@@ -518,24 +519,12 @@
        <div id="comentarios-lista" style="margin-top:28px;">
            <div id="comentarios-contador" style="color:#fff;font-size:1.1em;margin-bottom:10px;">0 Comentários</div>
            <!-- Comentários inseridos aqui -->
-           <div class="comentario-item" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:22px;background:rgba(30,30,30,0.95);padding:14px 18px;border-radius:12px;">
-               <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:#222;flex-shrink:0;">
-               <div>
-                   <div style="font-weight:600;color:#00A2E8;font-size:1.05em;margin-bottom:2px;">
-                       João - Brasil
-                   </div>
-                   <div style="color:#fff;font-size:1.08em;line-height:1.5;margin-bottom:6px;">Eu não sabia</div>
-                   <div style="display:flex;gap:18px;">
-                       <span style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">♡ Curtir</span>
-                       <span style="color:#aaa;font-size:0.98em;cursor:pointer;user-select:none;">↩️ Responder</span>
-                   </div>
-               </div>
-           </div>
        </div>
    </section>
+   -->
     </main>
 
-    <footer>
+    <footer> 
         <div class="footer-container">
             <div class="footer-section">
                 <h3>ME SIGA</h3>
@@ -579,6 +568,37 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (e) {
             comentarios = [];
         }
+    }
+    // Se não houver comentários salvos, adiciona o comentário inicial
+    if (!localStorage.getItem('comentarios') || comentarios.length === 0) {
+        comentarios = [
+            {
+                nome: "João",
+                pais: "Brasil",
+                texto: "Eu não sabia. Podes me contar",
+                foto: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+                respostas: [],
+                curtidas: 0
+            },
+            {
+                nome: "Leonel Messias",
+                pais: "Brasil",
+                texto: "Daniel podes me dizer se a tua namorada tem namorado?",
+                foto: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+                respostas: [
+                    {
+                        nome: "Daniel",
+                        pais: "Angola",
+                        texto: "Ela não é minha namorada 😅",
+                        foto: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+                        respostas: [],
+                        curtidas: 0
+                    }
+                ],
+                curtidas: 0
+            }
+        ];
+        localStorage.setItem('comentarios', JSON.stringify(comentarios));
     }
 
     fotoInput.addEventListener('change', function(e) {
@@ -729,6 +749,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     renderComentarios();
+    // Adiciona um log para mostrar o último comentário feito
+    if (comentarios.length > 0) {
+        console.log("Último comentário:", comentarios[0]);
+    }
 });
 </script>
 </body>
